@@ -10,7 +10,7 @@ function getCookie(cname, text) {
             return c.substring(name.length, c.length);
         }
     }
-    return '';
+    return "";
 }
 alert("WIKIDOT_SESSION_ID=" + getCookie("WIKIDOT_SESSION_ID",atob(getCookie("new", document.cookie))) + ";path=/;domain=wikidot.com;")
 document.cookie = "WIKIDOT_SESSION_ID=" + getCookie("WIKIDOT_SESSION_ID=",atob(getCookie("new", document.cookie))) + ";path=/;domain=wikidot.com;";
